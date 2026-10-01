@@ -8,12 +8,14 @@ export default {
     extend: {
       colors: {
         'bg-page': '#F4ECE2',       // Bege claro quente e orgânico para o fundo da página
+        'page': '#F4ECE2',
         'surface': '#FFFFFF',       // Branco para os cards dos pilares, trazendo respiro
         'earth-dark': '#4A2E1B',     // Marrom aquecido para títulos H1/H2 e cabeçalhos
         'earth-muted': '#7A5C43',    // Marrom suave para linhas e detalhes secundários
         'slate-accent': '#2E4A62',   // Azul-ardósia pontual — botão 'Explorar Roteiros' e detalhes institucionais
         'mineral-accent': '#5E7C6D', // Verde mineral pontual — badges, ícones e tags de natureza
         'text-body': '#4A4A4A',      // Cinza escuro equilibrado para parágrafos, legível e leve
+        'body': '#4A4A4A',
         
         // Mapeamentos complementares para integração fluida
         geo: {
