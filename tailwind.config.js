@@ -7,27 +7,32 @@ export default {
   theme: {
     extend: {
       colors: {
+        'bg-page': '#F4ECE2',       // Bege claro quente e orgânico para o fundo da página
+        'surface': '#FFFFFF',       // Branco para os cards dos pilares, trazendo respiro
+        'earth-dark': '#4A2E1B',     // Marrom aquecido para títulos H1/H2 e cabeçalhos
+        'earth-muted': '#7A5C43',    // Marrom suave para linhas e detalhes secundários
+        'slate-accent': '#2E4A62',   // Azul-ardósia pontual — botão 'Explorar Roteiros' e detalhes institucionais
+        'mineral-accent': '#5E7C6D', // Verde mineral pontual — badges, ícones e tags de natureza
+        'text-body': '#4A4A4A',      // Cinza escuro equilibrado para parágrafos, legível e leve
+        
+        // Mapeamentos complementares para integração fluida
         geo: {
-          earth: '#9E6738',   // Ocre terroso principal
-          dark: '#63391A',    // Marrom profundo para textos de destaque e contrastes
-          sand: '#D8A86C',    // Tom arenito para acentos e tags
-          sky: '#4B9CD3',     // Azul do globo/céu
-          cyan: '#63C7D0',    // Ciano do marcador e detalhes digitais
-          bg: '#FAF8F5',      // Fundo off-white com tom quente
-          surface: '#FFFFFF', // Superfície de cards
-          text: '#2D231B',    // Texto principal legível
-          muted: '#7A6E65'    // Texto secundário
-        },
-        // Mapeamentos de compatibilidade para tokens semânticos
-        primary: '#63391A',
-        secondary: '#9E6738',
-        background: '#FAF8F5',
-        card: '#FFFFFF',
-        'text-main': '#2D231B',
-        'text-muted': '#7A6E65',
+          earth: '#7A5C43',
+          dark: '#4A2E1B',
+          sand: '#D8A86C',
+          sky: '#2E4A62',
+          cyan: '#5E7C6D',
+          bg: '#F4ECE2',
+          surface: '#FFFFFF',
+          text: '#4A4A4A',
+          muted: '#7A5C43'
+        }
       },
       fontFamily: {
-        sans: ['Inter', 'Plus Jakarta Sans', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        heading: ['Montserrat', 'system-ui', 'sans-serif'],
+        montserrat: ['Montserrat', 'system-ui', 'sans-serif'],
+        sans: ['Open Sans', 'system-ui', 'sans-serif'],
+        open: ['Open Sans', 'system-ui', 'sans-serif'],
       },
     },
   },

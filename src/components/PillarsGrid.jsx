@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layers, Compass, GraduationCap, Microscope, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Layers, Compass, GraduationCap, Microscope, ArrowRight, Check } from 'lucide-react';
 
 const PILLARS = [
   {
@@ -10,8 +10,10 @@ const PILLARS = [
     imageAlt: 'Feição geológica em rocha costeira esculpida por processos erosivos (Geologia Geral)',
     imagePosition: 'object-[center_40%]',
     icon: Layers,
-    iconColor: 'text-geo-earth',
-    iconBg: 'bg-geo-sand/20',
+    accentColor: '#5E7C6D',
+    iconColor: 'text-mineral-accent',
+    iconBg: 'bg-[#5E7C6D]/10 text-mineral-accent border-[#5E7C6D]/20',
+    tagClass: 'bg-[#5E7C6D]/85 text-white',
     description:
       'Conceitos fundamentais da dinâmica terrestre, mineralogia, petrologia ígnea, metamórfica e sedimentar, estratigrafia e tectônica de placas.',
     topics: [
@@ -22,7 +24,7 @@ const PILLARS = [
     ],
     actionText: 'Acessar Geologia Geral',
     actionHref: '#geologia-geral',
-    badgeColor: 'bg-geo-sand/25 text-geo-dark',
+    actionColor: 'text-mineral-accent hover:text-[#4a6457]',
   },
   {
     id: 'roteiros-virtuais',
@@ -30,9 +32,12 @@ const PILLARS = [
     badge: 'Imersão & Campo Digital',
     image: '/images/pilares/roteiros-virtuais.jpg',
     imageAlt: 'Drone mapeando litoral para geração de roteiros virtuais e fotogrametria',
+    imagePosition: 'object-center',
     icon: Compass,
-    iconColor: 'text-geo-sky',
-    iconBg: 'bg-geo-sky/15',
+    accentColor: '#2E4A62',
+    iconColor: 'text-slate-accent',
+    iconBg: 'bg-[#2E4A62]/10 text-slate-accent border-[#2E4A62]/20',
+    tagClass: 'bg-[#2E4A62]/85 text-white',
     description:
       'Visitas e cadernos de campo em ambiente virtual interativo, com panoramas 360°, modelos tridimensionais de afloramentos e pontos de parada georreferenciados.',
     topics: [
@@ -43,7 +48,7 @@ const PILLARS = [
     ],
     actionText: 'Explorar Roteiros de Campo',
     actionHref: '#roteiros-virtuais',
-    badgeColor: 'bg-geo-sky/20 text-geo-dark',
+    actionColor: 'text-slate-accent hover:text-[#233a4e]',
   },
   {
     id: 'ensino',
@@ -51,9 +56,12 @@ const PILLARS = [
     badge: 'Graduação & Educação Básica',
     image: '/images/pilares/ensino.jpg',
     imageAlt: 'Estudante utilizando tablet e recursos digitais para aprendizagem em Geociências',
+    imagePosition: 'object-center',
     icon: GraduationCap,
-    iconColor: 'text-geo-earth',
-    iconBg: 'bg-geo-sand/20',
+    accentColor: '#5E7C6D',
+    iconColor: 'text-mineral-accent',
+    iconBg: 'bg-[#5E7C6D]/10 text-mineral-accent border-[#5E7C6D]/20',
+    tagClass: 'bg-[#5E7C6D]/85 text-white',
     description:
       'Recursos educacionais abertos para estudantes universitários e professores dos ensinos fundamental e médio interessados nas Geociências.',
     topics: [
@@ -64,7 +72,7 @@ const PILLARS = [
     ],
     actionText: 'Conhecer Recursos de Ensino',
     actionHref: '#ensino',
-    badgeColor: 'bg-geo-sand/25 text-geo-dark',
+    actionColor: 'text-mineral-accent hover:text-[#4a6457]',
   },
   {
     id: 'pesquisa-extensao',
@@ -72,9 +80,12 @@ const PILLARS = [
     badge: 'Ciência & Sociedade',
     image: '/images/pilares/pesquisa-extensao.jpg',
     imageAlt: 'Pesquisador em torre de observação e campo de estudo ambiental',
+    imagePosition: 'object-center',
     icon: Microscope,
-    iconColor: 'text-geo-sky',
-    iconBg: 'bg-geo-sky/15',
+    accentColor: '#2E4A62',
+    iconColor: 'text-slate-accent',
+    iconBg: 'bg-[#2E4A62]/10 text-slate-accent border-[#2E4A62]/20',
+    tagClass: 'bg-[#2E4A62]/85 text-white',
     description:
       'Articulação entre a produção científica da Faculdade de Geologia da UERJ e a sociedade, promovendo divulgação científica, geoconservação e geoturismo.',
     topics: [
@@ -85,29 +96,34 @@ const PILLARS = [
     ],
     actionText: 'Ver Projetos e Extensão',
     actionHref: '#pesquisa-extensao',
-    badgeColor: 'bg-geo-sky/20 text-geo-dark',
+    actionColor: 'text-slate-accent hover:text-[#233a4e]',
   },
 ];
 
 export default function PillarsGrid() {
   return (
-    <section className="py-16 sm:py-24 bg-geo-bg">
+    <section className="py-16 sm:py-24 bg-[#F4ECE2]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-geo-sand/20 text-geo-dark text-xs font-bold uppercase tracking-wider mb-3">
-            <span>Pilares do Geologia Virtual</span>
+          {/* Badge superior: tag em Verde mineral sutil */}
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#5E7C6D]/15 text-[#5E7C6D] font-semibold text-xs tracking-wider uppercase mb-3">
+            <span>PILARES DO GEOLOGIA VIRTUAL</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-geo-dark tracking-tight">
+          
+          {/* Título: Montserrat ExtraBold em marrom earth-dark (#4A2E1B) */}
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#4A2E1B] tracking-tight font-heading">
             Por onde começar?
           </h2>
-          <p className="mt-3.5 text-base sm:text-lg text-geo-muted leading-relaxed font-normal">
+          
+          {/* Subtítulo: Open Sans Regular em tom neutro suave */}
+          <p className="mt-3.5 text-base sm:text-lg text-[#555555] font-normal leading-relaxed font-sans max-w-2xl mx-auto">
             Comece por onde quiser: explore a Geologia no seu ritmo, com conteúdos, roteiros e materiais feitos para todos.
           </p>
         </div>
 
-        {/* 4 Pillars Grid with photos */}
+        {/* 4 Pillars Grid: 1 col celular, 2 tablet, 4 desktop */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {PILLARS.map((pillar) => {
             const Icon = pillar.icon;
@@ -115,7 +131,7 @@ export default function PillarsGrid() {
               <div
                 key={pillar.id}
                 id={pillar.id}
-                className="group bg-white rounded-2xl border border-geo-sand/30 overflow-hidden shadow-xs hover:shadow-xl hover:border-geo-earth/60 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5"
+                className="group bg-white rounded-2xl border border-earth-muted/15 overflow-hidden shadow-sm hover:shadow-md hover:border-mineral-accent/40 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1"
               >
                 <div>
                   {/* Pillar Photo Banner */}
@@ -128,43 +144,43 @@ export default function PillarsGrid() {
                     />
                     
                     {/* Gradient Overlay for photo depth */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent pointer-events-none" />
 
-                    {/* Floating Badge on Photo */}
+                    {/* Tag sutil e translúcida sobre a imagem (Verde mineral ou Azul-ardósia) */}
                     <div className="absolute top-3 right-3">
-                      <span className={`text-[10px] font-extrabold px-2.5 py-1 rounded-full ${pillar.badgeColor} backdrop-blur-md uppercase tracking-wider shadow-xs`}>
+                      <span className={`text-[10px] font-semibold px-2.5 py-1 rounded-full ${pillar.tagClass} backdrop-blur-sm uppercase tracking-wider shadow-2xs font-sans`}>
                         {pillar.badge}
                       </span>
                     </div>
 
-                    {/* Floating Category Icon */}
+                    {/* Ícone com acento fino em Verde mineral ou Azul-ardósia */}
                     <div className="absolute -bottom-4 left-5">
-                      <div className={`w-11 h-11 rounded-xl ${pillar.iconBg} bg-white shadow-md border border-geo-sand/30 flex items-center justify-center group-hover:scale-110 transition-transform`}>
-                        <Icon className={`w-5 h-5 ${pillar.iconColor}`} />
+                      <div className={`w-10 h-10 rounded-xl bg-white shadow-sm border ${pillar.iconBg} flex items-center justify-center group-hover:scale-105 transition-transform`}>
+                        <Icon className={`w-5 h-5 ${pillar.iconColor}`} strokeWidth={1.75} />
                       </div>
                     </div>
                   </div>
 
                   {/* Card Content */}
                   <div className="pt-7 p-6">
-                    {/* Title */}
-                    <h3 className="text-xl font-bold text-geo-dark group-hover:text-geo-earth transition-colors">
+                    {/* Título do Card: Montserrat Bold em earth-dark */}
+                    <h3 className="text-xl font-bold text-earth-dark group-hover:text-mineral-accent transition-colors font-heading">
                       {pillar.title}
                     </h3>
 
-                    {/* Description */}
-                    <p className="mt-3 text-sm text-geo-muted leading-relaxed">
+                    {/* Descrição: Open Sans peso 400 em cinza neutro (#555555), tamanho text-sm */}
+                    <p className="mt-3 text-sm text-[#555555] font-normal leading-relaxed font-sans">
                       {pillar.description}
                     </p>
 
-                    {/* Topics List */}
-                    <div className="mt-5 pt-4 border-t border-geo-sand/15 space-y-2">
-                      <p className="text-[11px] font-bold uppercase tracking-wider text-geo-dark/50">
+                    {/* Topics List: texto leve e legível */}
+                    <div className="mt-5 pt-4 border-t border-earth-muted/10 space-y-2">
+                      <p className="text-[11px] font-semibold uppercase tracking-wider text-earth-muted/80 font-sans">
                         Tópicos & Recursos:
                       </p>
                       {pillar.topics.map((topic, idx) => (
-                        <div key={idx} className="flex items-start gap-2 text-xs text-geo-text">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-geo-earth flex-shrink-0 mt-0.5" />
+                        <div key={idx} className="flex items-start gap-2 text-xs text-[#555555] font-normal font-sans">
+                          <Check className={`w-3.5 h-3.5 ${pillar.iconColor} flex-shrink-0 mt-0.5`} strokeWidth={2.25} />
                           <span className="leading-snug">{topic}</span>
                         </div>
                       ))}
@@ -174,13 +190,13 @@ export default function PillarsGrid() {
 
                 {/* Card Action Link */}
                 <div className="p-6 pt-0">
-                  <div className="pt-4 border-t border-geo-sand/15">
+                  <div className="pt-4 border-t border-earth-muted/10">
                     <a
                       href={pillar.actionHref}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-geo-earth group-hover:text-geo-dark transition-colors"
+                      className={`inline-flex items-center gap-1.5 text-xs font-semibold ${pillar.actionColor} transition-colors font-sans`}
                     >
                       <span>{pillar.actionText}</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" strokeWidth={2} />
                     </a>
                   </div>
                 </div>

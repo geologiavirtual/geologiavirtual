@@ -4,18 +4,22 @@
 
 @layer base {
   body {
-    @apply bg-geo-bg text-geo-text;
+    @apply bg-bg-page text-text-body font-sans;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
   }
 }
 
-/* Custom scrollbar in geo palette */
+/* Custom scrollbar in warm organic palette */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #FAF8F5;
+  background: #F4ECE2;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -24,5 +28,5 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #9E6738;
+  background: #7A5C43;
 }

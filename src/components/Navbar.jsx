@@ -17,7 +17,7 @@ export default function Navbar({ activeSection = 'Início' }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 15);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -25,10 +25,10 @@ export default function Navbar({ activeSection = 'Início' }) {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 border-b border-geo-sand/20 ${
+      className={`sticky top-0 z-50 transition-all duration-300 border-b ${
         scrolled
-          ? 'bg-geo-surface/95 backdrop-blur-md shadow-sm py-2.5'
-          : 'bg-geo-bg py-3.5'
+          ? 'bg-[#F4ECE2]/95 backdrop-blur-md shadow-xs border-earth-muted/20 py-2.5'
+          : 'bg-[#F4ECE2]/90 backdrop-blur-md border-earth-muted/15 py-3.5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,10 +37,10 @@ export default function Navbar({ activeSection = 'Início' }) {
           {/* Logo & Official Title Slot */}
           <a
             href="#inicio"
-            className="flex items-center gap-3.5 group focus:outline-none focus:ring-2 focus:ring-geo-sand/50 rounded-xl p-1 transition-transform"
+            className="flex items-center gap-3.5 group focus:outline-none focus:ring-2 focus:ring-slate-accent/30 rounded-xl p-1 transition-transform"
           >
             {/* Slot de Logotipo Oficial: /public/images/logo.png */}
-            <div className="relative flex-shrink-0 w-12 h-12 rounded-full p-0.5 bg-geo-surface border border-geo-sand/40 shadow-sm flex items-center justify-center overflow-hidden group-hover:border-geo-earth transition-colors">
+            <div className="relative flex-shrink-0 w-11 h-11 sm:w-12 sm:h-12 rounded-full p-0.5 bg-white border border-earth-muted/30 shadow-xs flex items-center justify-center overflow-hidden group-hover:border-slate-accent transition-colors">
               <img
                 src="/images/logo.png"
                 alt="Geologia Virtual Logo"
@@ -52,10 +52,10 @@ export default function Navbar({ activeSection = 'Início' }) {
             </div>
 
             <div className="flex flex-col">
-              <span className="text-xl sm:text-2xl font-extrabold tracking-tight text-geo-dark leading-tight font-sans">
-                Geologia <span className="text-geo-earth font-black">Virtual</span>
+              <span className="text-xl sm:text-2xl font-extrabold tracking-tight text-earth-dark leading-tight font-heading">
+                Geologia <span className="text-mineral-accent font-black">Virtual</span>
               </span>
-              <span className="text-[11px] font-semibold text-geo-muted tracking-wide uppercase">
+              <span className="text-[11px] font-medium text-earth-muted tracking-wider uppercase font-sans">
                 Faculdade de Geologia • UERJ
               </span>
             </div>
@@ -69,28 +69,28 @@ export default function Navbar({ activeSection = 'Início' }) {
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 relative ${
+                  className={`px-3 py-2 rounded-lg text-sm font-medium font-sans transition-all duration-150 relative ${
                     isActive
-                      ? 'text-geo-dark font-bold bg-geo-sand/15 shadow-xs'
-                      : 'text-geo-text hover:text-geo-earth hover:bg-geo-sand/10'
+                      ? 'text-earth-dark font-semibold bg-white/70 shadow-2xs'
+                      : 'text-earth-dark/90 hover:text-mineral-accent hover:bg-white/40'
                   }`}
                 >
                   {link.name}
                   {isActive && (
-                    <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-geo-earth rounded-full" />
+                    <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-mineral-accent rounded-full" />
                   )}
                 </a>
               );
             })}
           </nav>
 
-          {/* Action Button & Mobile Hamburger */}
+          {/* Action Button: Azul-ardósia (#2E4A62) & Mobile Hamburger */}
           <div className="flex items-center gap-3">
             <a
               href="#roteiros-virtuais"
-              className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-geo-earth hover:bg-geo-dark text-white text-xs font-semibold tracking-wide uppercase shadow-sm transition-all hover:shadow hover:-translate-y-0.5 active:translate-y-0"
+              className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-accent hover:bg-[#233a4e] text-white text-xs font-semibold font-sans tracking-wider uppercase shadow-xs transition-all duration-200 hover:shadow hover:-translate-y-0.5 active:translate-y-0"
             >
-              <Compass className="w-4 h-4 text-geo-sand" />
+              <Compass className="w-4 h-4 text-white/80" />
               <span>Explorar Roteiros</span>
             </a>
 
@@ -98,14 +98,14 @@ export default function Navbar({ activeSection = 'Início' }) {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="xl:hidden inline-flex items-center justify-center p-2 rounded-lg text-geo-dark hover:text-geo-earth hover:bg-geo-sand/10 focus:outline-none focus:ring-2 focus:ring-geo-earth/30 transition-colors"
+              className="xl:hidden inline-flex items-center justify-center p-2 rounded-lg text-earth-dark hover:text-mineral-accent hover:bg-white/50 focus:outline-none focus:ring-2 focus:ring-slate-accent/30 transition-colors"
               aria-expanded={mobileMenuOpen}
-              aria-label="Menu de navegação"
+              aria-label="Abrir menu de navegação"
             >
               {mobileMenuOpen ? (
-                <X className="w-6 h-6 text-geo-earth" />
+                <X className="w-6 h-6 text-earth-dark" />
               ) : (
-                <Menu className="w-6 h-6 text-geo-dark" />
+                <Menu className="w-6 h-6 text-earth-dark" />
               )}
             </button>
           </div>
@@ -113,7 +113,7 @@ export default function Navbar({ activeSection = 'Início' }) {
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="xl:hidden mt-3 pt-3 pb-4 border-t border-geo-sand/20 animate-fadeIn">
+          <div className="xl:hidden mt-3 pt-3 pb-4 border-t border-earth-muted/15 animate-fadeIn">
             <div className="flex flex-col space-y-1">
               {NAV_LINKS.map((link) => {
                 const isActive = activeSection === link.name;
@@ -122,26 +122,26 @@ export default function Navbar({ activeSection = 'Início' }) {
                     key={link.name}
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+                    className={`flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-medium font-sans transition-colors ${
                       isActive
-                        ? 'bg-geo-sand/20 text-geo-dark font-bold'
-                        : 'text-geo-text hover:bg-geo-sand/10 hover:text-geo-earth'
+                        ? 'bg-white text-earth-dark font-bold'
+                        : 'text-earth-dark hover:bg-white/60 hover:text-mineral-accent'
                     }`}
                   >
                     <span>{link.name}</span>
-                    <ChevronRight className={`w-4 h-4 ${isActive ? 'text-geo-earth' : 'text-geo-muted'}`} />
+                    <ChevronRight className={`w-4 h-4 ${isActive ? 'text-mineral-accent' : 'text-earth-muted/50'}`} />
                   </a>
                 );
               })}
 
-              <div className="pt-3 mt-2 border-t border-geo-sand/20">
+              <div className="pt-3 mt-2 border-t border-earth-muted/15">
                 <a
                   href="#roteiros-virtuais"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-geo-earth hover:bg-geo-dark text-white text-sm font-semibold tracking-wide shadow-sm transition-colors"
+                  className="flex items-center justify-center gap-2 w-full py-2.5 rounded-full bg-slate-accent hover:bg-[#233a4e] text-white text-xs font-semibold font-sans tracking-wider uppercase shadow-xs transition-colors"
                 >
-                  <Compass className="w-4 h-4 text-geo-sand" />
-                  <span>Explorar Acervo & Roteiros</span>
+                  <Compass className="w-4 h-4 text-white/80" />
+                  <span>Explorar Roteiros</span>
                 </a>
               </div>
             </div>
