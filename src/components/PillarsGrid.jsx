@@ -102,7 +102,7 @@ const PILLARS = [
 
 export default function PillarsGrid() {
   return (
-    <section className="py-16 sm:py-24 bg-[#F4ECE2]">
+    <section id="por-onde-comecar" className="py-14 sm:py-20 bg-[#F4ECE2]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

@@ -80,6 +80,33 @@ export default function AboutAndContact() {
           </div>
         </div>
 
+        {/* Publicações Section */}
+        <div id="publicacoes" className="bg-white rounded-2xl border border-earth-muted/15 p-8 sm:p-10 shadow-xs">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div className="space-y-2 max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-mineral-accent/15 text-mineral-accent text-xs font-semibold tracking-wider uppercase font-sans">
+                <span>Acervo Científico & Didático</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-earth-dark font-heading">
+                Publicações e Produções Acadêmicas
+              </h3>
+              <p className="text-sm text-text-body font-normal leading-relaxed font-sans">
+                Artigos científicos, resumos em congressos, guias de campo e recursos educacionais abertos
+                desenvolvidos pelos pesquisadores e bolsistas do projeto Geologia Virtual - UERJ.
+              </p>
+            </div>
+            <div className="flex-shrink-0">
+              <a
+                href="#contato"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white border border-earth-muted/25 text-earth-dark hover:border-mineral-accent hover:text-mineral-accent text-xs font-semibold font-heading uppercase tracking-wider transition-colors shadow-2xs"
+              >
+                <span>Solicitar Publicações</span>
+                <ArrowUpRight className="w-4 h-4 text-mineral-accent" />
+              </a>
+            </div>
+          </div>
+        </div>
+
         {/* Contato Section */}
         <div id="contato" className="bg-white rounded-2xl border border-earth-muted/15 p-8 sm:p-10 shadow-xs">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
