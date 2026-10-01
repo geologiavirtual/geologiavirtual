@@ -2,7 +2,7 @@ import React from 'react';
 import logoUerj from '../assets/logo-uerj.png';
 import logoGeologiaUerj from '../assets/logo-geologia-uerj.png';
 import logoGeoatlantico from '../assets/logo-geoatlantico.png';
-import logoTektos from '../assets/logo-tektos.svg';
+import logoTektos from '../assets/logo-tektos.png';
 import logoLet from '../assets/logo-let.png';
 import logoCetreina from '../assets/logo-cetreina.png';
 import logoCnpq from '../assets/logo-cnpq.svg';
@@ -133,16 +133,14 @@ export default function Footer() {
           </h4>
           
           {/* Apenas os logotipos de modo bem discreto, sem cards e sem nomes */}
-          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 sm:gap-4 lg:gap-5">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-5 sm:gap-7 lg:gap-9">
             {INSTITUTIONAL_PARTNERS.map((partner) => {
-              const content = (
-                <div className="bg-white/95 hover:bg-white px-2.5 py-1.5 rounded-lg transition-all shadow-2xs hover:shadow-xs flex items-center justify-center h-9 sm:h-10">
-                  <img
-                    src={partner.logo}
-                    alt={`Logotipo da ${partner.name}`}
-                    className="max-h-full w-auto max-w-[130px] object-contain"
-                  />
-                </div>
+              const imgElement = (
+                <img
+                  src={partner.logo}
+                  alt={`Logotipo da ${partner.name}`}
+                  className="h-8 sm:h-9 w-auto max-w-[150px] object-contain transition-transform duration-200 hover:scale-105"
+                />
               );
 
               if (partner.website && partner.website !== '#') {
@@ -154,9 +152,9 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     title={partner.name}
                     aria-label={`Acessar site de ${partner.name}`}
-                    className="inline-flex items-center justify-center transition-transform hover:scale-105"
+                    className="inline-flex items-center justify-center p-1"
                   >
-                    {content}
+                    {imgElement}
                   </a>
                 );
               }
@@ -164,10 +162,10 @@ export default function Footer() {
               return (
                 <div
                   key={partner.name}
-                  className="inline-flex items-center justify-center"
+                  className="inline-flex items-center justify-center p-1"
                   title={partner.name}
                 >
-                  {content}
+                  {imgElement}
                 </div>
               );
             })}
