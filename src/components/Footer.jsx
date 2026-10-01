@@ -1,12 +1,19 @@
 import React from 'react';
 import { Mail, ExternalLink, Globe, ShieldCheck } from 'lucide-react';
+import logoGeologiaUerj from '../assets/logo-geologia-uerj.jpg';
+import logoUerj from '../assets/logo-uerj.png';
+import logoCetreina from '../assets/logo-cetreina.jpg';
+import logoGeoatlantico from '../assets/logo-geoatlantico.svg';
+import logoTektos from '../assets/logo-tektos.svg';
+import logoLet from '../assets/logo-let.svg';
+import logoGV from '../assets/logo.png';
 
 const INSTITUTIONAL_PARTNERS = [
   {
     name: 'Faculdade de Geologia - UERJ',
     shortName: 'FGEL / UERJ',
     tag: 'Unidade Acadêmica',
-    logo: '/images/logo-geologia-uerj.jpg',
+    logo: logoGeologiaUerj,
     website: 'https://www.fgel.uerj.br',
     fit: 'object-contain',
   },
@@ -14,7 +21,7 @@ const INSTITUTIONAL_PARTNERS = [
     name: 'UERJ',
     shortName: 'Univ. do Estado do Rio de Janeiro',
     tag: 'Instituição Sede',
-    logo: '/images/logo-uerj.png',
+    logo: logoUerj,
     website: 'https://www.uerj.br',
     fit: 'object-contain p-1',
   },
@@ -22,7 +29,7 @@ const INSTITUTIONAL_PARTNERS = [
     name: 'Cetreina',
     shortName: 'Estágios & Bolsas UERJ',
     tag: 'Apoio & Fomento',
-    logo: '/images/logo-cetreina.jpg',
+    logo: logoCetreina,
     website: 'http://www.cetreina.uerj.br',
     fit: 'object-contain',
   },
@@ -30,7 +37,7 @@ const INSTITUTIONAL_PARTNERS = [
     name: 'Instituto Geoatlantico',
     shortName: 'Instituto GeoAtlântico',
     tag: 'Cooperação Científica',
-    logo: '/images/logo-geoatlantico.svg',
+    logo: logoGeoatlantico,
     website: '#',
     fit: 'object-contain',
   },
@@ -38,7 +45,7 @@ const INSTITUTIONAL_PARTNERS = [
     name: 'Tektos',
     shortName: 'Grupo de Pesquisa TEKTOS',
     tag: 'Tectônica & Modelagem',
-    logo: '/images/logo-tektos.svg',
+    logo: logoTektos,
     website: '#',
     fit: 'object-contain',
   },
@@ -46,7 +53,7 @@ const INSTITUTIONAL_PARTNERS = [
     name: 'Let',
     shortName: 'Laboratório LET',
     tag: 'Estratigrafia & Tectônica',
-    logo: '/images/logo-let.svg',
+    logo: logoLet,
     website: '#',
     fit: 'object-contain',
   },
@@ -65,15 +72,12 @@ export default function Footer() {
           {/* Col 1: Project Identity & Description */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3.5">
-              {/* Logo Oficial: /public/images/logo.png */}
+              {/* Logo Oficial */}
               <div className="w-13 h-13 rounded-full bg-white p-1 flex items-center justify-center shadow-md flex-shrink-0 border-2 border-white/20">
                 <img
-                  src="/images/logo.png"
+                  src={logoGV}
                   alt="Logo Geologia Virtual"
                   className="w-full h-full object-contain"
-                  onError={(e) => {
-                    e.target.src = '/images/logo-geologia-virtual.png';
-                  }}
                 />
               </div>
               <div>

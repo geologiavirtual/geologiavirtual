@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mail, Users, ArrowUpRight } from 'lucide-react';
+import logoGV from '../assets/logo.png';
 
 export default function AboutAndContact() {
   return (
@@ -46,16 +47,10 @@ export default function AboutAndContact() {
             {/* Slot de Logotipo Oficial em Destaque */}
             <div className="w-36 h-36 rounded-full bg-[#F4ECE2]/60 border-2 border-earth-muted/20 p-2 flex items-center justify-center mb-4 relative group shadow-xs">
               <img
-                src="/images/logo.png"
+                src={logoGV}
                 alt="Logo Oficial Geologia Virtual"
                 className="w-full h-full object-contain"
-                onError={(e) => {
-                  e.target.src = '/images/logo-geologia-virtual.png';
-                }}
               />
-              <span className="absolute -bottom-2.5 px-3 py-0.5 rounded-full bg-earth-dark text-white text-[10px] font-mono font-medium shadow-xs">
-                /public/images/logo.png
-              </span>
             </div>
 
             <h3 className="text-lg font-bold text-earth-dark mt-2 font-heading">Identidade Visual Oficial</h3>

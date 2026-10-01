@@ -1,12 +1,16 @@
 import React from 'react';
 import { Layers, Compass, GraduationCap, Microscope, ArrowRight, Check } from 'lucide-react';
+import imgGeologiaGeral from '../assets/pilares/geologia-geral.jpg';
+import imgRoteirosVirtuais from '../assets/pilares/roteiros-virtuais.jpg';
+import imgEnsino from '../assets/pilares/ensino.jpg';
+import imgPesquisaExtensao from '../assets/pilares/pesquisa-extensao.jpg';
 
 const PILLARS = [
   {
     id: 'geologia-geral',
     title: 'Geologia Geral',
     badge: 'Fundamentos & Rochas',
-    image: '/images/pilares/geologia-geral.jpg',
+    image: imgGeologiaGeral,
     imageAlt: 'Feição geológica em rocha costeira esculpida por processos erosivos (Geologia Geral)',
     imagePosition: 'object-[center_40%]',
     icon: Layers,
@@ -30,7 +34,7 @@ const PILLARS = [
     id: 'roteiros-virtuais',
     title: 'Roteiros Virtuais',
     badge: 'Imersão & Campo Digital',
-    image: '/images/pilares/roteiros-virtuais.jpg',
+    image: imgRoteirosVirtuais,
     imageAlt: 'Drone mapeando litoral para geração de roteiros virtuais e fotogrametria',
     imagePosition: 'object-center',
     icon: Compass,
@@ -54,7 +58,7 @@ const PILLARS = [
     id: 'ensino',
     title: 'Ensino',
     badge: 'Graduação & Educação Básica',
-    image: '/images/pilares/ensino.jpg',
+    image: imgEnsino,
     imageAlt: 'Estudante utilizando tablet e recursos digitais para aprendizagem em Geociências',
     imagePosition: 'object-center',
     icon: GraduationCap,
@@ -78,7 +82,7 @@ const PILLARS = [
     id: 'pesquisa-extensao',
     title: 'Pesquisa e Extensão',
     badge: 'Ciência & Sociedade',
-    image: '/images/pilares/pesquisa-extensao.jpg',
+    image: imgPesquisaExtensao,
     imageAlt: 'Pesquisador em torre de observação e campo de estudo ambiental',
     imagePosition: 'object-center',
     icon: Microscope,
