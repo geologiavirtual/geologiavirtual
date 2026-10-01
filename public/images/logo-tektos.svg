@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" fill="none">
+  <rect width="240" height="70" rx="8" fill="#FFFFFF"/>
+  <!-- Tectonic fault / strike-slip motif -->
+  <rect x="16" y="16" width="38" height="38" rx="8" fill="#FAF8F5" stroke="#9E6738" stroke-width="2"/>
+  <path d="M22 25 L48 45" stroke="#63391A" stroke-width="3" stroke-linecap="round"/>
+  <path d="M26 44 L34 44 L34 36" stroke="#D8A86C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M38 24 L46 24 L46 32" stroke="#4B9CD3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Text -->
+  <text x="68" y="34" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="20" font-weight="900" fill="#63391A" letter-spacing="1">TEKTOS</text>
+  <text x="68" y="47" font-family="system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#9E6738">MODELAGEM & TECTÔNICA</text>
+  <text x="68" y="58" font-family="system-ui, sans-serif" font-size="8" font-weight="600" fill="#7A6E65">Grupo de Pesquisa • FGEL / UERJ</text>
+</svg>

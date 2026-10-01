@@ -1,104 +1,128 @@
 import React from 'react';
 import { Palette, Check, Layers, Sliders } from 'lucide-react';
 
-const PALETTE_TOKENS = [
+const GEO_TOKENS = [
   {
-    name: 'primary',
-    hex: '#1E3A5F',
-    role: 'Azul institucional / geociências',
-    bgClass: 'bg-primary',
+    name: 'geo-earth',
+    hex: '#9E6738',
+    role: 'Ocre terroso principal',
+    bgClass: 'bg-geo-earth',
     textClass: 'text-white',
-    usage: 'Títulos, Navbar, botões primários, cabeçalhos e footer',
+    usage: 'Botões primários, detalhes do relevo e acentos terrosos',
   },
   {
-    name: 'secondary',
-    hex: '#C85A32',
-    role: 'Terracota / mineral',
-    bgClass: 'bg-secondary',
+    name: 'geo-dark',
+    hex: '#63391A',
+    role: 'Marrom profundo para contraste',
+    bgClass: 'bg-geo-dark',
     textClass: 'text-white',
-    usage: 'Botões de destaque (CTA), ícones, badges e detalhes geológicos',
+    usage: 'Títulos principais, cabeçalhos, Footer e textos de destaque',
   },
   {
-    name: 'background',
-    hex: '#F8FAFC',
-    role: 'Off-white para corpo da página',
-    bgClass: 'bg-background',
-    textClass: 'text-text-main',
-    usage: 'Fundo geral do layout, áreas neutras',
+    name: 'geo-sand',
+    hex: '#D8A86C',
+    role: 'Tom arenito para acentos',
+    bgClass: 'bg-geo-sand',
+    textClass: 'text-geo-dark',
+    usage: 'Bordas sutis, tags, divisores e realces no footer',
+  },
+  {
+    name: 'geo-sky',
+    hex: '#4B9CD3',
+    role: 'Azul do globo / céu',
+    bgClass: 'bg-geo-sky',
+    textClass: 'text-white',
+    usage: 'Botões secundários (borda/texto), links e ícones',
+  },
+  {
+    name: 'geo-cyan',
+    hex: '#63C7D0',
+    role: 'Ciano do marcador e digital',
+    bgClass: 'bg-geo-cyan',
+    textClass: 'text-geo-dark',
+    usage: 'Indicador do pin, detalhes interativos e 3D',
+  },
+  {
+    name: 'geo-bg',
+    hex: '#FAF8F5',
+    role: 'Fundo off-white com tom quente',
+    bgClass: 'bg-geo-bg',
+    textClass: 'text-geo-text',
+    usage: 'Corpo da página (body) e planos de fundo quentes',
     border: true,
   },
   {
-    name: 'card',
+    name: 'geo-surface',
     hex: '#FFFFFF',
-    role: 'Branco puro para cartões e módulos',
-    bgClass: 'bg-card',
-    textClass: 'text-text-main',
-    usage: 'Superfícies de cartões, menus, modais e containers elevados',
+    role: 'Superfície de cartões',
+    bgClass: 'bg-geo-surface',
+    textClass: 'text-geo-text',
+    usage: 'Cartões dos 4 pilares, blocos de logos e painéis',
     border: true,
   },
   {
-    name: 'text-main',
-    hex: '#1F2937',
-    role: 'Grafite escuro para tipografia principal',
-    bgClass: 'bg-text-main',
+    name: 'geo-text',
+    hex: '#2D231B',
+    role: 'Texto principal legível',
+    bgClass: 'bg-geo-text',
     textClass: 'text-white',
-    usage: 'Textos de leitura, parágrafos e subtítulos',
+    usage: 'Tipografia de leitura, parágrafos e corpo textual',
   },
   {
-    name: 'text-muted',
-    hex: '#64748B',
-    role: 'Cinza ardósia para metadados e legendas',
-    bgClass: 'bg-text-muted',
+    name: 'geo-muted',
+    hex: '#7A6E65',
+    role: 'Texto secundário',
+    bgClass: 'bg-geo-muted',
     textClass: 'text-white',
-    usage: 'Legendas, apoios, créditos e textos secundários',
+    usage: 'Subtítulos, legendas, apoios e metadados',
   },
 ];
 
 export default function PaletteShowcase() {
   return (
-    <section className="py-12 bg-slate-100/70 border-y border-slate-200">
+    <section className="py-12 bg-geo-sand/10 border-y border-geo-sand/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
           <div>
-            <div className="inline-flex items-center gap-2 text-xs font-bold text-secondary uppercase tracking-wider mb-1.5">
-              <Palette className="w-4 h-4" />
-              <span>Design System • Paleta de Cores Configurada</span>
+            <div className="inline-flex items-center gap-2 text-xs font-bold text-geo-earth uppercase tracking-wider mb-1.5">
+              <Palette className="w-4 h-4 text-geo-earth" />
+              <span>Identidade Visual Oficial • Geologia Virtual</span>
             </div>
-            <h3 className="text-2xl font-extrabold text-primary">
-              Tokens do Tailwind CSS estendidos no tema
+            <h3 className="text-2xl font-extrabold text-geo-dark">
+              Paleta oficial aplicada no Tailwind CSS
             </h3>
           </div>
-          <p className="text-xs text-text-muted max-w-md">
-            Cores definidas em <code className="px-2 py-0.5 rounded bg-white border border-slate-300 font-mono text-primary font-semibold">tailwind.config.js</code> prontas para uso em todos os componentes.
+          <p className="text-xs text-geo-muted max-w-md">
+            Tokens mapeados no namespace <code className="px-2 py-0.5 rounded bg-white border border-geo-sand/40 font-mono text-geo-dark font-bold">geo.*</code> em <code className="px-1.5 py-0.5 rounded bg-white border border-geo-sand/40 font-mono text-geo-earth">tailwind.config.js</code>.
           </p>
         </div>
 
         {/* Swatches Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {PALETTE_TOKENS.map((token) => (
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-9 gap-3">
+          {GEO_TOKENS.map((token) => (
             <div
               key={token.name}
-              className="bg-card rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+              className="bg-white rounded-xl border border-geo-sand/30 overflow-hidden shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between"
             >
               {/* Color Block */}
               <div
-                className={`h-20 w-full ${token.bgClass} flex items-end p-2.5 ${token.border ? 'border-b border-slate-200' : ''}`}
+                className={`h-16 w-full ${token.bgClass} flex items-end p-2 ${token.border ? 'border-b border-geo-sand/20' : ''}`}
               >
-                <span className={`text-[11px] font-mono font-bold px-1.5 py-0.5 rounded bg-black/30 text-white backdrop-blur-sm`}>
+                <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-black/40 text-white backdrop-blur-xs">
                   {token.hex}
                 </span>
               </div>
 
               {/* Details */}
-              <div className="p-3 space-y-1">
-                <span className="block font-mono text-xs font-bold text-primary">
+              <div className="p-2.5 space-y-0.5">
+                <span className="block font-mono text-[11px] font-bold text-geo-dark truncate">
                   {token.name}
                 </span>
-                <span className="block text-[11px] font-semibold text-text-main leading-tight">
+                <span className="block text-[10px] font-semibold text-geo-text leading-tight line-clamp-1">
                   {token.role}
                 </span>
-                <p className="text-[10px] text-text-muted pt-1 leading-snug">
+                <p className="text-[9px] text-geo-muted pt-1 leading-snug line-clamp-2">
                   {token.usage}
                 </p>
               </div>

@@ -7,15 +7,27 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#1E3A5F',      // Azul institucional / geociências
-        secondary: '#C85A32',    // Terracota / mineral
-        background: '#F8FAFC',   // Off-white para corpo da página
+        geo: {
+          earth: '#9E6738',   // Ocre terroso principal
+          dark: '#63391A',    // Marrom profundo para textos de destaque e contrastes
+          sand: '#D8A86C',    // Tom arenito para acentos e tags
+          sky: '#4B9CD3',     // Azul do globo/céu
+          cyan: '#63C7D0',    // Ciano do marcador e detalhes digitais
+          bg: '#FAF8F5',      // Fundo off-white com tom quente
+          surface: '#FFFFFF', // Superfície de cards
+          text: '#2D231B',    // Texto principal legível
+          muted: '#7A6E65'    // Texto secundário
+        },
+        // Mapeamentos de compatibilidade para tokens semânticos
+        primary: '#63391A',
+        secondary: '#9E6738',
+        background: '#FAF8F5',
         card: '#FFFFFF',
-        'text-main': '#1F2937',
-        'text-muted': '#64748B',
+        'text-main': '#2D231B',
+        'text-muted': '#7A6E65',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        sans: ['Inter', 'Plus Jakarta Sans', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
       },
     },
   },
