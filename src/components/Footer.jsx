@@ -1,10 +1,10 @@
 import React from 'react';
 import logoUerj from '../assets/logo-uerj.png';
-import logoGeologiaUerj from '../assets/logo-geologia-uerj.jpg';
-import logoGeoatlantico from '../assets/logo-geoatlantico.svg';
+import logoGeologiaUerj from '../assets/logo-geologia-uerj.png';
+import logoGeoatlantico from '../assets/logo-geoatlantico.png';
 import logoTektos from '../assets/logo-tektos.svg';
-import logoLet from '../assets/logo-let.svg';
-import logoCetreina from '../assets/logo-cetreina.jpg';
+import logoLet from '../assets/logo-let.png';
+import logoCetreina from '../assets/logo-cetreina.png';
 import logoCnpq from '../assets/logo-cnpq.svg';
 import logoGV from '../assets/logo.png';
 
@@ -133,14 +133,16 @@ export default function Footer() {
           </h4>
           
           {/* Apenas os logotipos de modo bem discreto, sem cards e sem nomes */}
-          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 sm:gap-6 lg:gap-8">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 sm:gap-4 lg:gap-5">
             {INSTITUTIONAL_PARTNERS.map((partner) => {
               const content = (
-                <img
-                  src={partner.logo}
-                  alt={`Logotipo da ${partner.name}`}
-                  className="h-7 sm:h-8 w-auto max-w-[130px] object-contain rounded opacity-80 hover:opacity-100 transition-all duration-200"
-                />
+                <div className="bg-white/95 hover:bg-white px-2.5 py-1.5 rounded-lg transition-all shadow-2xs hover:shadow-xs flex items-center justify-center h-9 sm:h-10">
+                  <img
+                    src={partner.logo}
+                    alt={`Logotipo da ${partner.name}`}
+                    className="max-h-full w-auto max-w-[130px] object-contain"
+                  />
+                </div>
               );
 
               if (partner.website && partner.website !== '#') {
