@@ -125,15 +125,15 @@ export default function Navbar({ activeSection = 'Início' }) {
           : 'bg-[#F4ECE2]/90 backdrop-blur-md border-earth-muted/15 py-2.5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-16">
           
           {/* Logo & Official Title Slot */}
           <a
             href="#inicio"
-            className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-slate-accent/30 rounded-xl p-1 transition-transform flex-shrink-0"
+            className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none focus:ring-2 focus:ring-slate-accent/30 rounded-xl p-1 transition-transform flex-shrink-0"
           >
-            <div className="relative flex-shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-full p-0.5 bg-white border border-earth-muted/30 shadow-2xs flex items-center justify-center overflow-hidden group-hover:border-slate-accent transition-colors">
+            <div className="relative flex-shrink-0 w-9 h-9 sm:w-11 sm:h-11 rounded-full p-0.5 bg-white border border-earth-muted/30 shadow-2xs flex items-center justify-center overflow-hidden group-hover:border-slate-accent transition-colors">
               <img
                 src={logoImg}
                 alt="Geologia Virtual Logo"
@@ -142,17 +142,17 @@ export default function Navbar({ activeSection = 'Início' }) {
             </div>
 
             <div className="flex flex-col">
-              <span className="text-lg sm:text-xl font-extrabold tracking-tight text-earth-dark leading-tight font-heading">
+              <span className="text-base sm:text-lg xl:text-xl font-extrabold tracking-tight text-earth-dark leading-tight font-heading whitespace-nowrap">
                 Geologia <span className="text-mineral-accent font-black">Virtual</span>
               </span>
-              <span className="text-[10px] font-medium text-earth-muted tracking-wider uppercase font-sans">
+              <span className="text-[9px] sm:text-[10px] font-medium text-earth-muted tracking-wider uppercase font-sans whitespace-nowrap">
                 Faculdade de Geologia • UERJ
               </span>
             </div>
           </a>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1" aria-label="Navegação principal">
+          {/* Desktop Navigation Links — single line guaranteed with whitespace-nowrap */}
+          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5 flex-nowrap" aria-label="Navegação principal">
             {MENU_STRUCTURE.map((item) => {
               if (item.type === 'link') {
                 const isActive = activeSection === item.name;
@@ -160,10 +160,10 @@ export default function Navbar({ activeSection = 'Início' }) {
                   <a
                     key={item.name}
                     href={item.href}
-                    className={`px-2.5 xl:px-3 py-2 rounded-lg text-[13px] xl:text-sm font-semibold font-heading transition-all duration-150 relative ${
+                    className={`whitespace-nowrap px-2 xl:px-2.5 py-1.5 rounded-lg text-xs xl:text-[13px] 2xl:text-sm font-semibold font-heading transition-all duration-150 relative ${
                       isActive
-                        ? 'text-earth-dark bg-white/70 shadow-2xs'
-                        : 'text-earth-dark/90 hover:text-mineral-accent hover:bg-white/40'
+                        ? 'text-earth-dark font-bold bg-white/40 after:content-[""] after:absolute after:bottom-0.5 after:left-2 after:right-2 after:h-[2px] after:bg-mineral-accent/70 after:rounded-full'
+                        : 'text-earth-dark/85 hover:text-mineral-accent hover:bg-white/35'
                     }`}
                   >
                     {item.name}
@@ -176,7 +176,7 @@ export default function Navbar({ activeSection = 'Início' }) {
               return (
                 <div
                   key={item.name}
-                  className="relative"
+                  className="relative flex-shrink-0"
                   onMouseEnter={() => setActiveDropdown(item.name)}
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
@@ -185,10 +185,10 @@ export default function Navbar({ activeSection = 'Início' }) {
                     onClick={() => setActiveDropdown(isDropdownOpen ? null : item.name)}
                     aria-expanded={isDropdownOpen}
                     aria-haspopup="true"
-                    className={`inline-flex items-center gap-1 px-2.5 xl:px-3 py-2 rounded-lg text-[13px] xl:text-sm font-semibold font-heading transition-all duration-150 ${
+                    className={`whitespace-nowrap inline-flex items-center gap-1 px-2 xl:px-2.5 py-1.5 rounded-lg text-xs xl:text-[13px] 2xl:text-sm font-semibold font-heading transition-all duration-150 ${
                       isDropdownOpen
-                        ? 'text-earth-dark bg-white/80 shadow-2xs'
-                        : 'text-earth-dark/90 hover:text-mineral-accent hover:bg-white/40'
+                        ? 'text-earth-dark bg-white/60'
+                        : 'text-earth-dark/85 hover:text-mineral-accent hover:bg-white/35'
                     }`}
                   >
                     <span>{item.name}</span>

@@ -106,11 +106,11 @@ const PILLARS = [
 
 export default function PillarsGrid() {
   return (
-    <section id="por-onde-comecar" className="py-14 sm:py-20 bg-[#F4ECE2]">
+    <section id="por-onde-comecar" className="pt-7 sm:pt-9 pb-14 sm:pb-20 bg-[#F4ECE2]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
           {/* Badge superior: tag em Verde mineral sutil */}
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#5E7C6D]/15 text-[#5E7C6D] font-semibold text-xs tracking-wider uppercase mb-3">
             <span>PILARES DO GEOLOGIA VIRTUAL</span>
@@ -123,7 +123,7 @@ export default function PillarsGrid() {
           
           {/* Subtítulo: Open Sans Regular em tom neutro suave */}
           <p className="mt-3.5 text-base sm:text-lg text-[#555555] font-normal leading-relaxed font-sans max-w-2xl mx-auto">
-            Comece por onde quiser: explore a Geologia no seu ritmo, com conteúdos, roteiros e materiais feitos para todos.
+            Comece por onde quiser: explore a Geologia no seu ritmo e descubra diferentes caminhos para conhecer as Ciências da Terra.
           </p>
         </div>
 
