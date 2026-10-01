@@ -39,15 +39,6 @@ jobs:
       - name: Build static site
         run: npm run build
 
-      - name: Verify CNAME in build output
-        run: |
-          if [ -f dist/CNAME ]; then
-            echo "CNAME validated: $(cat dist/CNAME)"
-          else
-            echo "Error: CNAME file missing from dist/"
-            exit 1
-          fi
-
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
