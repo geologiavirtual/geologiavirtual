@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import PillarsGrid from './components/PillarsGrid';
-import PaletteShowcase from './components/PaletteShowcase';
 import AboutAndContact from './components/AboutAndContact';
 import Footer from './components/Footer';
 
@@ -10,26 +9,23 @@ export default function App() {
   const [activeSection, setActiveSection] = useState('Início');
 
   return (
-    <div className="min-h-screen flex flex-col bg-background text-text-main font-sans selection:bg-secondary/20 selection:text-secondary">
+    <div className="min-h-screen flex flex-col bg-geo-bg text-geo-text font-sans selection:bg-geo-earth/20 selection:text-geo-dark">
       {/* Global Navbar */}
       <Navbar activeSection={activeSection} />
 
       {/* Main Content Area */}
       <main className="flex-1">
-        {/* Hero Section */}
+        {/* Banner Hero no topo da página */}
         <Hero />
 
-        {/* Design System & Theme Palette Indicator */}
-        <PaletteShowcase />
-
-        {/* 4 Pillars Grid (Geologia Geral, Roteiros Virtuais, Ensino, Pesquisa e Extensão) */}
+        {/* Pilares Estruturais (Por onde começar?) imediatamente abaixo do banner */}
         <PillarsGrid />
 
-        {/* About & Institutional Contact */}
+        {/* Sobre Nós & Contato Institucional */}
         <AboutAndContact />
       </main>
 
-      {/* Global Footer */}
+      {/* Global Footer com Apoio Institucional */}
       <Footer />
     </div>
   );

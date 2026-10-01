@@ -96,15 +96,14 @@ export default function PillarsGrid() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-geo-sand/20 text-geo-dark text-xs font-bold uppercase tracking-wider mb-3">
-            <span>Pilares Estruturais do Projeto</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-geo-sand/20 text-geo-dark text-xs font-bold uppercase tracking-wider mb-3">
+            <span>Pilares do Geologia Virtual</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-geo-dark tracking-tight">
-            Quatro eixos integrados para a difusão das Geociências
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-geo-dark tracking-tight">
+            Por onde começar?
           </h2>
-          <p className="mt-3 text-base sm:text-lg text-geo-muted leading-relaxed">
-            Estrutura desenhada para conectar o ensino e a pesquisa da Faculdade de Geologia (UERJ)
-            com ferramentas digitais acessíveis a toda a sociedade.
+          <p className="mt-3.5 text-base sm:text-lg text-geo-muted leading-relaxed font-normal">
+            Comece por onde quiser: explore a Geologia no seu ritmo, com conteúdos, roteiros e materiais feitos para todos.
           </p>
         </div>
 
