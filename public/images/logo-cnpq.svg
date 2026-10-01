@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" fill="none">
+  <rect width="240" height="70" rx="8" fill="#FFFFFF"/>
+  <!-- Stylized CNPq Ribbon Symbol -->
+  <g transform="translate(18, 16)">
+    <!-- Yellow loop -->
+    <path d="M17 6 C9 6 3 12 3 19 C3 26 9 32 17 32 C25 32 31 26 31 19 C31 14 27 8 21 7" stroke="#F5A800" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+    <!-- Blue loop -->
+    <path d="M13 30 C21 30 27 24 27 17 C27 10 21 4 13 4 C5 4 -1 10 -1 17 C-1 22 3 28 9 29" stroke="#005A9C" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+  </g>
+  <!-- Text -->
+  <text x="58" y="37" font-family="'Montserrat', system-ui, sans-serif" font-size="23" font-weight="900" fill="#005A9C" letter-spacing="-0.5">CNPq</text>
+  <text x="58" y="50" font-family="'Open Sans', system-ui, sans-serif" font-size="7.5" font-weight="600" fill="#555555" letter-spacing="0.1">Conselho Nacional de Desenvolvimento</text>
+  <text x="58" y="59" font-family="'Open Sans', system-ui, sans-serif" font-size="7.5" font-weight="600" fill="#555555">Científico e Tecnológico</text>
+</svg>

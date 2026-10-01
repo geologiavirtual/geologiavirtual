@@ -31,13 +31,15 @@ export default function AboutAndContact() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
         
         {/* 1. Sobre Nós Section */}
-        <div id="sobre-nos" className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div id="sobre-nos" className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
           
           {/* Texto e Chamada */}
-          <div className="lg:col-span-7 space-y-5">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#5E7C6D]/15 text-mineral-accent text-xs font-semibold tracking-wider uppercase font-sans">
-              <Users className="w-3.5 h-3.5" />
-              <span>Sobre o Projeto</span>
+          <div className="lg:col-span-7 flex flex-col justify-center space-y-5">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#5E7C6D]/15 text-mineral-accent text-xs font-semibold tracking-wider uppercase font-sans">
+                <Users className="w-3.5 h-3.5" />
+                <span>Sobre o Projeto</span>
+              </div>
             </div>
             
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-earth-dark tracking-tight font-heading">
@@ -65,15 +67,15 @@ export default function AboutAndContact() {
             </div>
           </div>
 
-          {/* Imagem do Projeto em Destaque */}
-          <div className="lg:col-span-5">
-            <div className="relative rounded-2xl overflow-hidden shadow-md border-2 border-white/80 ring-1 ring-earth-muted/20 group">
+          {/* Imagem do Projeto: Redimensionada para a mesma altura exata da seção de texto */}
+          <div className="lg:col-span-5 flex">
+            <div className="relative w-full h-full min-h-[320px] rounded-2xl overflow-hidden shadow-md border-2 border-white/80 ring-1 ring-earth-muted/20 group flex">
               <img
                 src={imgSobreProjeto}
                 alt="Demonstração prática de Geociências e roteiros virtuais com equipe e estudantes"
-                className="w-full h-auto object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
             </div>
           </div>
 
