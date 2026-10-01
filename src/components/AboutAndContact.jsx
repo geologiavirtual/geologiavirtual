@@ -1,146 +1,222 @@
-import React from 'react';
-import { Mail, Users, ArrowUpRight } from 'lucide-react';
-import logoGV from '../assets/logo.png';
+import React, { useState } from 'react';
+import { Mail, Users, CheckCircle2 } from 'lucide-react';
+import imgSobreProjeto from '../assets/sobre-projeto.jpg';
 
 export default function AboutAndContact() {
+  const [formData, setFormData] = useState({
+    nome: '',
+    email: '',
+    assunto: '',
+    mensagem: '',
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const subject = encodeURIComponent(formData.assunto || 'Contato - Geologia Virtual');
+    const body = encodeURIComponent(
+      `Nome: ${formData.nome}\nE-mail: ${formData.email}\n\nMensagem:\n${formData.mensagem}`
+    );
+    window.open(`mailto:geologiaeambientevirtual@gmail.com?subject=${subject}&body=${body}`, '_blank');
+    setSubmitted(true);
+  };
+
   return (
-    <section className="py-16 sm:py-20 bg-[#F4ECE2] border-t border-earth-muted/15">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    <section className="pt-8 sm:pt-10 pb-16 sm:pb-20 bg-[#F4ECE2] border-t border-earth-muted/15">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
         
-        {/* Sobre Nós Section */}
+        {/* 1. Sobre Nós Section */}
         <div id="sobre-nos" className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          {/* Texto e Chamada */}
           <div className="lg:col-span-7 space-y-5">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#5E7C6D]/15 text-mineral-accent text-xs font-semibold tracking-wider uppercase font-sans">
               <Users className="w-3.5 h-3.5" />
               <span>Sobre o Projeto</span>
             </div>
             
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-earth-dark tracking-tight font-heading">
-              Faculdade de Geologia da UERJ inovando na difusão científica
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-earth-dark tracking-tight font-heading">
+              Conheça o Geologia Virtual
             </h2>
 
-            <p className="text-base text-text-body font-normal leading-relaxed font-sans">
-              O <strong className="font-semibold text-earth-dark">Geologia Virtual</strong> nasceu como uma iniciativa acadêmica pioneira para integrar
-              as tecnologias digitais de informação e comunicação ao ensino e à difusão das Geociências. O portal
-              reúne acervos de minerais e rochas, modelos tridimensionais de afloramentos, cadernos interativos
-              de campo e guias temáticos abertos para toda a comunidade.
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              <div className="p-5 rounded-2xl bg-white border border-earth-muted/15 shadow-xs">
-                <span className="font-bold text-earth-dark text-sm block mb-1 font-heading">Missão Didática</span>
-                <p className="text-xs text-text-body font-normal font-sans leading-relaxed">
-                  Democratizar o acesso a materiais didáticos geológicos interativos para universidades e escolas.
-                </p>
-              </div>
-
-              <div className="p-5 rounded-2xl bg-white border border-earth-muted/15 shadow-xs">
-                <span className="font-bold text-mineral-accent text-sm block mb-1 font-heading">Inovação e Campo</span>
-                <p className="text-xs text-text-body font-normal font-sans leading-relaxed">
-                  Possibilitar a exploração pré e pós-campo com digitalização 3D e roteiros 360° georreferenciados.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="lg:col-span-5 bg-white rounded-2xl border border-earth-muted/15 p-8 shadow-xs flex flex-col items-center text-center">
-            {/* Slot de Logotipo Oficial em Destaque */}
-            <div className="w-36 h-36 rounded-full bg-[#F4ECE2]/60 border-2 border-earth-muted/20 p-2 flex items-center justify-center mb-4 relative group shadow-xs">
-              <img
-                src={logoGV}
-                alt="Logo Oficial Geologia Virtual"
-                className="w-full h-full object-contain"
-              />
-            </div>
-
-            <h3 className="text-lg font-bold text-earth-dark mt-2 font-heading">Identidade Visual Oficial</h3>
-            <p className="text-xs text-text-body font-normal font-sans mt-1 max-w-xs leading-relaxed">
-              Símbolo representativo das camadas estratigráficas, relevo montanhoso, globo e marcador digital.
-            </p>
-
-            <div className="w-full mt-6 pt-5 border-t border-earth-muted/10 text-left space-y-2 text-xs text-text-body font-sans">
-              <div className="flex items-center justify-between">
-                <span className="text-earth-muted">Coordenação:</span>
-                <span className="font-semibold text-earth-dark">Faculdade de Geologia (FGEL)</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-earth-muted">Instituição:</span>
-                <span className="font-semibold text-earth-dark">UERJ - Maracanã</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-earth-muted">Domínio Oficial:</span>
-                <span className="font-semibold text-slate-accent font-mono">geologiavirtual.org</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Publicações Section */}
-        <div id="publicacoes" className="bg-white rounded-2xl border border-earth-muted/15 p-8 sm:p-10 shadow-xs">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-            <div className="space-y-2 max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-mineral-accent/15 text-mineral-accent text-xs font-semibold tracking-wider uppercase font-sans">
-                <span>Acervo Científico & Didático</span>
-              </div>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-earth-dark font-heading">
-                Publicações e Produções Acadêmicas
-              </h3>
-              <p className="text-sm text-text-body font-normal leading-relaxed font-sans">
-                Artigos científicos, resumos em congressos, guias de campo e recursos educacionais abertos
-                desenvolvidos pelos pesquisadores e bolsistas do projeto Geologia Virtual - UERJ.
+            <div className="space-y-4 text-base sm:text-lg text-text-body font-normal leading-relaxed font-sans">
+              <p>
+                O Geologia Virtual é um projeto da Faculdade de Geologia da UERJ que integra ensino,
+                pesquisa e extensão para aproximar as Ciências da Terra da sociedade.
+              </p>
+              <p>
+                Professores, estudantes e colaboradores participam da criação de conteúdos, roteiros
+                virtuais, materiais educativos e experiências digitais que tornam a Geologia mais acessível.
               </p>
             </div>
-            <div className="flex-shrink-0">
+
+            <div className="pt-2">
               <a
                 href="#contato"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white border border-earth-muted/25 text-earth-dark hover:border-mineral-accent hover:text-mineral-accent text-xs font-semibold font-heading uppercase tracking-wider transition-colors shadow-2xs"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-slate-accent hover:bg-[#233a4e] text-white text-xs sm:text-sm font-semibold font-heading tracking-wide uppercase shadow-sm hover:shadow transition-all group"
               >
-                <span>Solicitar Publicações</span>
-                <ArrowUpRight className="w-4 h-4 text-mineral-accent" />
+                <span>Conheça o projeto e nossa equipe →</span>
               </a>
             </div>
           </div>
+
+          {/* Imagem do Projeto em Destaque */}
+          <div className="lg:col-span-5">
+            <div className="relative rounded-2xl overflow-hidden shadow-md border-2 border-white/80 ring-1 ring-earth-muted/20 group">
+              <img
+                src={imgSobreProjeto}
+                alt="Demonstração prática de Geociências e roteiros virtuais com equipe e estudantes"
+                className="w-full h-auto object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
+            </div>
+          </div>
+
         </div>
 
-        {/* Contato Section */}
-        <div id="contato" className="bg-white rounded-2xl border border-earth-muted/15 p-8 sm:p-10 shadow-xs">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        {/* Ancora invisivel para manter compatibilidade com links de navegacao */}
+        <div id="publicacoes" className="hidden" aria-hidden="true" />
+
+        {/* 3. Seção Contato / Canal Institucional */}
+        <div id="contato" className="bg-white rounded-2xl border border-earth-muted/15 p-8 sm:p-12 shadow-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             
-            <div className="lg:col-span-6 space-y-3">
+            {/* Coluna Esquerda: Informações e Texto */}
+            <div className="lg:col-span-5 space-y-5">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-accent/10 text-slate-accent text-xs font-semibold tracking-wider uppercase font-sans">
                 <Mail className="w-3.5 h-3.5" />
-                <span>Canal Institucional</span>
+                <span>FALE COM A GENTE</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-earth-dark font-heading">
-                Fale com a equipe do Geologia Virtual
-              </h3>
-              <p className="text-sm text-text-body font-normal leading-relaxed font-sans">
-                Tem dúvidas sobre materiais didáticos, sugestões de novos roteiros virtuais, parcerias de
-                pesquisa ou deseja agendar ações de extensão para sua escola ou instituição?
-              </p>
-            </div>
 
-            <div className="lg:col-span-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-end gap-4">
-              <div className="p-4 rounded-xl bg-[#F4ECE2]/60 border border-earth-muted/20 flex-1">
-                <span className="text-[11px] uppercase font-semibold text-earth-muted block mb-1 font-sans">
-                  E-mail Oficial do Projeto:
-                </span>
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-earth-dark tracking-tight font-heading">
+                Entre em contato
+              </h3>
+
+              <p className="text-base text-text-body font-normal leading-relaxed font-sans">
+                Tem alguma dúvida, sugestão ou quer saber mais sobre o Geologia Virtual? Entre em contato com nossa equipe.
+              </p>
+
+              {/* Informação discreta de envio direto */}
+              <div className="pt-6 border-t border-earth-muted/15 space-y-1.5">
+                <p className="text-xs text-earth-muted font-medium font-sans">
+                  Prefere enviar diretamente?
+                </p>
                 <a
-                  href="mailto:geologiaemambientevirtual@gmail.com"
-                  className="font-mono text-sm sm:text-base font-semibold text-earth-dark hover:text-slate-accent break-all transition-colors flex items-center gap-2"
+                  href="mailto:geologiaeambientevirtual@gmail.com"
+                  className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-accent hover:text-earth-dark transition-colors font-sans break-all"
                 >
-                  <Mail className="w-4 h-4 text-slate-accent flex-shrink-0" />
-                  <span>geologiaemambientevirtual@gmail.com</span>
+                  <Mail className="w-4 h-4 text-mineral-accent flex-shrink-0" />
+                  <span>geologiaeambientevirtual@gmail.com</span>
                 </a>
               </div>
+            </div>
 
-              <a
-                href="mailto:geologiaemambientevirtual@gmail.com"
-                className="px-6 py-3.5 rounded-full bg-slate-accent hover:bg-[#233a4e] text-white font-semibold font-sans text-xs tracking-wider uppercase shadow-xs hover:shadow transition-all text-center flex items-center justify-center gap-2 flex-shrink-0"
-              >
-                <span>Enviar E-mail</span>
-                <ArrowUpRight className="w-4 h-4" />
-              </a>
+            {/* Coluna Direita: Formulário de Contato */}
+            <div className="lg:col-span-7 bg-[#F4ECE2]/50 border border-earth-muted/20 rounded-2xl p-6 sm:p-8">
+              {submitted ? (
+                <div className="text-center py-8 space-y-4">
+                  <div className="w-12 h-12 rounded-full bg-mineral-accent/15 text-mineral-accent flex items-center justify-center mx-auto">
+                    <CheckCircle2 className="w-6 h-6" />
+                  </div>
+                  <h4 className="text-lg font-bold text-earth-dark font-heading">
+                    Mensagem pronta para envio!
+                  </h4>
+                  <p className="text-xs sm:text-sm text-text-body font-sans max-w-md mx-auto leading-relaxed">
+                    Seu aplicativo de e-mail foi acionado com os dados preenchidos. Caso prefira, envie diretamente para <strong className="font-semibold text-slate-accent">geologiaeambientevirtual@gmail.com</strong>.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSubmitted(false);
+                      setFormData({ nome: '', email: '', assunto: '', mensagem: '' });
+                    }}
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-accent hover:text-earth-dark transition-colors font-sans pt-2"
+                  >
+                    <span>Enviar outra mensagem</span>
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div>
+                    <label htmlFor="nome" className="block text-xs font-semibold text-earth-dark uppercase tracking-wider mb-1.5 font-sans">
+                      Nome
+                    </label>
+                    <input
+                      type="text"
+                      id="nome"
+                      name="nome"
+                      required
+                      value={formData.nome}
+                      onChange={handleChange}
+                      placeholder="Seu nome completo"
+                      className="w-full px-4 py-2.5 rounded-xl bg-white border border-earth-muted/25 text-earth-dark placeholder-stone-400 text-sm focus:outline-none focus:ring-2 focus:ring-slate-accent/30 focus:border-slate-accent font-sans transition-all"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="email" className="block text-xs font-semibold text-earth-dark uppercase tracking-wider mb-1.5 font-sans">
+                        E-mail
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="seu@email.com"
+                        className="w-full px-4 py-2.5 rounded-xl bg-white border border-earth-muted/25 text-earth-dark placeholder-stone-400 text-sm focus:outline-none focus:ring-2 focus:ring-slate-accent/30 focus:border-slate-accent font-sans transition-all"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="assunto" className="block text-xs font-semibold text-earth-dark uppercase tracking-wider mb-1.5 font-sans">
+                        Assunto
+                      </label>
+                      <input
+                        type="text"
+                        id="assunto"
+                        name="assunto"
+                        required
+                        value={formData.assunto}
+                        onChange={handleChange}
+                        placeholder="Assunto da mensagem"
+                        className="w-full px-4 py-2.5 rounded-xl bg-white border border-earth-muted/25 text-earth-dark placeholder-stone-400 text-sm focus:outline-none focus:ring-2 focus:ring-slate-accent/30 focus:border-slate-accent font-sans transition-all"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="mensagem" className="block text-xs font-semibold text-earth-dark uppercase tracking-wider mb-1.5 font-sans">
+                      Mensagem
+                    </label>
+                    <textarea
+                      id="mensagem"
+                      name="mensagem"
+                      rows={4}
+                      required
+                      value={formData.mensagem}
+                      onChange={handleChange}
+                      placeholder="Como podemos te ajudar?"
+                      className="w-full px-4 py-2.5 rounded-xl bg-white border border-earth-muted/25 text-earth-dark placeholder-stone-400 text-sm focus:outline-none focus:ring-2 focus:ring-slate-accent/30 focus:border-slate-accent font-sans resize-y transition-all"
+                    />
+                  </div>
+
+                  <div className="pt-1">
+                    <button
+                      type="submit"
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-slate-accent hover:bg-[#233a4e] text-white text-xs font-semibold font-heading uppercase tracking-wider shadow-sm hover:shadow transition-all cursor-pointer group"
+                    >
+                      <span>Enviar mensagem →</span>
+                    </button>
+                  </div>
+                </form>
+              )}
             </div>
 
           </div>
