@@ -1,88 +1,101 @@
 import React from 'react';
-import { Compass, Sparkles, Layers, ArrowRight, BookOpen, MapPin, Eye } from 'lucide-react';
+import { Compass, Layers, ArrowRight, BookOpen } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section id="inicio" className="relative overflow-hidden bg-gradient-to-b from-geo-sand/15 via-geo-bg to-geo-bg pt-12 pb-20 lg:pt-20 lg:pb-28 border-b border-geo-sand/20">
-      
-      {/* Decorative geological background motif */}
-      <div className="absolute inset-0 pointer-events-none opacity-40">
-        <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-geo-sand/20 blur-3xl" />
-        <div className="absolute top-1/2 -left-20 w-80 h-80 rounded-full bg-geo-sky/15 blur-3xl" />
-        <div className="absolute inset-0 bg-[radial-gradient(#9E6738_1px,transparent_1px)] [background-size:24px_24px] opacity-10" />
+    <section
+      id="inicio"
+      className="relative overflow-hidden bg-geo-dark min-h-[520px] lg:min-h-[580px] flex items-center justify-center border-b-4 border-geo-earth"
+    >
+      {/* Background Image: Panorâmica do Pão de Açúcar e Enseada de Botafogo */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/images/banner-rio.jpg"
+          alt="Vista panorâmica da Enseada de Botafogo e Pão de Açúcar - Rio de Janeiro"
+          className="w-full h-full object-cover object-center scale-105 animate-pulse duration-[10000ms]"
+          style={{ animationDuration: '12s' }}
+        />
+        {/* Multilayer gradient scrim for crystal clear readability and rich photographic tone */}
+        <div className="absolute inset-0 bg-gradient-to-t from-geo-dark/95 via-geo-dark/75 to-black/50" />
+        <div className="absolute inset-0 bg-radial from-transparent via-black/20 to-black/60" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto space-y-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-center">
+        <div className="max-w-4xl mx-auto space-y-6">
           
           {/* Institutional Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-geo-surface border border-geo-sand/40 text-geo-dark text-xs font-bold tracking-wide uppercase shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-geo-cyan animate-pulse" />
-            <span>Faculdade de Geologia • UERJ</span>
-            <span className="text-geo-sand">•</span>
-            <span className="text-geo-earth font-mono lowercase">geologiavirtual.org</span>
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold tracking-wider uppercase shadow-md">
+            <span className="w-2 h-2 rounded-full bg-geo-cyan animate-ping" />
+            <span className="text-geo-sand">Faculdade de Geologia • UERJ</span>
+            <span className="text-white/40">•</span>
+            <span className="text-stone-200 font-mono lowercase">geologiavirtual.org</span>
           </div>
 
-          {/* Main Title & Slogan */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-geo-dark tracking-tight leading-[1.15]">
-            Geociências em mapas, imagens, roteiros virtuais e experiências interativas
+          {/* Banner Title: Geologia Geral */}
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.1] drop-shadow-lg font-sans">
+            Geologia <span className="text-geo-sand">Geral</span>
           </h1>
 
-          {/* Subtitle */}
-          <p className="text-base sm:text-lg text-geo-muted leading-relaxed font-normal max-w-2xl mx-auto">
-            Plataforma acadêmica dedicada à exploração do patrimônio geológico,
-            afloramentos didáticos, modelagem 3D e materiais para o ensino e a difusão das Ciências da Terra.
+          {/* Subtitle: Geociências em mapas, imagens, roteiros virtuais e experiências interativas */}
+          <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-geo-sand leading-snug drop-shadow-md max-w-3xl mx-auto font-sans">
+            Geociências em mapas, imagens, roteiros virtuais e experiências interativas
           </p>
 
-          {/* Action Buttons: bg-geo-earth (hover:bg-geo-dark) & border-geo-sky text-geo-sky */}
+          {/* Smaller explanatory text below subtitle */}
+          <p className="text-sm sm:text-base text-stone-200/90 leading-relaxed font-normal max-w-2xl mx-auto drop-shadow-sm">
+            Plataforma acadêmica dedicada à exploração do patrimônio geológico, afloramentos didáticos,
+            modelagem 3D e materiais para o ensino e a difusão das Ciências da Terra.
+          </p>
+
+          {/* Call to Action Buttons */}
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             
-            {/* Botão Primário: bg-geo-earth com hover:bg-geo-dark */}
+            {/* Primary Action Button: bg-geo-earth hover:bg-geo-dark */}
             <a
               href="#roteiros-virtuais"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-geo-earth hover:bg-geo-dark text-white font-semibold text-sm sm:text-base shadow-md shadow-geo-earth/20 hover:shadow-lg hover:shadow-geo-dark/30 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-geo-earth hover:bg-geo-dark text-white font-bold text-sm sm:text-base shadow-xl shadow-black/40 hover:shadow-2xl transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 border border-geo-sand/40"
             >
               <Compass className="w-5 h-5 text-geo-sand" />
               <span>Explorar Roteiros Virtuais</span>
               <ArrowRight className="w-4 h-4 ml-1" />
             </a>
 
-            {/* Botão Secundário: borda border-geo-sky e texto text-geo-sky */}
+            {/* Secondary Action Button: border-geo-sky text-white / geo-sky */}
             <a
               href="#geologia-geral"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-geo-surface hover:bg-geo-sky/10 border-2 border-geo-sky text-geo-sky hover:text-geo-sky font-bold text-sm sm:text-base shadow-xs hover:shadow-sm transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-black/30 hover:bg-geo-sky/20 border-2 border-geo-sky text-white hover:text-geo-sky font-bold text-sm sm:text-base backdrop-blur-sm shadow-lg transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
             >
               <Layers className="w-5 h-5 text-geo-sky" />
               <span>Acervo de Geologia Geral</span>
             </a>
 
-            {/* Botão de Apoio: Materiais de Ensino */}
+            {/* Tertiary / Educational Materials Button */}
             <a
               href="#ensino"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-geo-surface hover:bg-geo-sand/15 text-geo-text font-semibold text-sm sm:text-base border border-geo-sand/40 shadow-xs transition-all duration-200"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold text-sm sm:text-base backdrop-blur-sm transition-all duration-200"
             >
-              <BookOpen className="w-4 h-4 text-geo-earth" />
+              <BookOpen className="w-4 h-4 text-geo-sand" />
               <span>Materiais de Ensino</span>
             </a>
           </div>
 
-          {/* Quick Metrics & Pillars Ticker */}
-          <div className="pt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-geo-sand/20 mt-10">
-            <div className="p-3.5 bg-geo-surface rounded-xl border border-geo-sand/30 shadow-xs">
-              <span className="block text-2xl font-black text-geo-dark">3D & 360°</span>
-              <span className="text-xs text-geo-muted font-medium">Modelos & Afloramentos</span>
+          {/* Highlights glass stats ticker */}
+          <div className="pt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 border-t border-white/15 mt-8">
+            <div className="p-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 text-left">
+              <span className="block text-2xl font-black text-white">3D & 360°</span>
+              <span className="text-xs text-geo-sand font-medium">Modelos & Afloramentos</span>
             </div>
-            <div className="p-3.5 bg-geo-surface rounded-xl border border-geo-sand/30 shadow-xs">
-              <span className="block text-2xl font-black text-geo-earth">UERJ</span>
-              <span className="text-xs text-geo-muted font-medium">Faculdade de Geologia</span>
+            <div className="p-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 text-left">
+              <span className="block text-2xl font-black text-geo-sand">UERJ</span>
+              <span className="text-xs text-stone-300 font-medium">Faculdade de Geologia</span>
             </div>
-            <div className="p-3.5 bg-geo-surface rounded-xl border border-geo-sand/30 shadow-xs">
+            <div className="p-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 text-left">
               <span className="block text-2xl font-black text-geo-sky">100%</span>
-              <span className="text-xs text-geo-muted font-medium">Acesso Aberto & Público</span>
+              <span className="text-xs text-stone-300 font-medium">Acesso Aberto & Público</span>
             </div>
-            <div className="p-3.5 bg-geo-surface rounded-xl border border-geo-sand/30 shadow-xs">
-              <span className="block text-2xl font-black text-geo-dark">4 Pilares</span>
-              <span className="text-xs text-geo-muted font-medium">Ensino, Pesquisa & Extensão</span>
+            <div className="p-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 text-left">
+              <span className="block text-2xl font-black text-white">4 Pilares</span>
+              <span className="text-xs text-geo-sand font-medium">Ensino, Pesquisa & Campo</span>
             </div>
           </div>
 
