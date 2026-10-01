@@ -25,7 +25,7 @@ const INSTITUTIONAL_PARTNERS = [
     name: 'Instituto GeoAtlântico',
     shortName: 'Instituto GeoAtlântico',
     logo: logoGeoatlantico,
-    website: '#',
+    website: 'https://instituto-geoatlantico.org/',
   },
   {
     name: 'Grupo de Pesquisa TEKTOS',
@@ -128,33 +128,47 @@ export default function Footer() {
 
         {/* 2. Realização e Apoio Institucional */}
         <div className="space-y-4">
-          <h4 className="text-xs font-bold uppercase tracking-widest text-stone-300 font-heading text-center sm:text-left">
+          <h4 className="text-xs font-bold uppercase tracking-widest text-stone-300/90 font-heading text-center sm:text-left">
             REALIZAÇÃO E APOIO INSTITUCIONAL
           </h4>
           
-          {/* Logotipos acompanhados dos nomes para reconhecimento/acessibilidade */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4 items-stretch">
-            {INSTITUTIONAL_PARTNERS.map((partner) => (
-              <a
-                key={partner.shortName}
-                href={partner.website}
-                target={partner.website !== '#' ? '_blank' : undefined}
-                rel={partner.website !== '#' ? 'noopener noreferrer' : undefined}
-                className="bg-white/95 hover:bg-white rounded-xl p-3 flex flex-col items-center justify-between text-center shadow-xs hover:shadow-md transition-all group border border-white/10"
-                title={partner.name}
-              >
-                <div className="h-11 sm:h-12 w-full flex items-center justify-center p-1">
-                  <img
-                    src={partner.logo}
-                    alt={`Logotipo da ${partner.name}`}
-                    className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
-                  />
+          {/* Apenas os logotipos de modo bem discreto, sem cards e sem nomes */}
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 sm:gap-6 lg:gap-8">
+            {INSTITUTIONAL_PARTNERS.map((partner) => {
+              const content = (
+                <img
+                  src={partner.logo}
+                  alt={`Logotipo da ${partner.name}`}
+                  className="h-7 sm:h-8 w-auto max-w-[130px] object-contain rounded opacity-80 hover:opacity-100 transition-all duration-200"
+                />
+              );
+
+              if (partner.website && partner.website !== '#') {
+                return (
+                  <a
+                    key={partner.name}
+                    href={partner.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={partner.name}
+                    aria-label={`Acessar site de ${partner.name}`}
+                    className="inline-flex items-center justify-center transition-transform hover:scale-105"
+                  >
+                    {content}
+                  </a>
+                );
+              }
+
+              return (
+                <div
+                  key={partner.name}
+                  className="inline-flex items-center justify-center"
+                  title={partner.name}
+                >
+                  {content}
                 </div>
-                <span className="mt-2 text-[11px] font-semibold text-earth-dark font-sans tracking-tight leading-tight line-clamp-1 group-hover:text-mineral-accent transition-colors">
-                  {partner.shortName}
-                </span>
-              </a>
-            ))}
+              );
+            })}
           </div>
         </div>
 
