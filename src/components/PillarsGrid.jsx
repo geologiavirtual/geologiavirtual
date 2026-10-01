@@ -7,7 +7,8 @@ const PILLARS = [
     title: 'Geologia Geral',
     badge: 'Fundamentos & Rochas',
     image: '/images/pilares/geologia-geral.jpg',
-    imageAlt: 'Formação rochosa e afloramento costeiro representando Geologia Geral',
+    imageAlt: 'Feição geológica em rocha costeira esculpida por processos erosivos (Geologia Geral)',
+    imagePosition: 'object-[center_40%]',
     icon: Layers,
     iconColor: 'text-geo-earth',
     iconBg: 'bg-geo-sand/20',
@@ -123,7 +124,7 @@ export default function PillarsGrid() {
                     <img
                       src={pillar.image}
                       alt={pillar.imageAlt}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className={`w-full h-full object-cover ${pillar.imagePosition || 'object-center'} transition-transform duration-500 group-hover:scale-105`}
                       loading="lazy"
                     />
                     
